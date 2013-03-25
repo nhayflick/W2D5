@@ -13,7 +13,7 @@ class Board
 	def setup_board
 		@board.each_with_index do |row, row_index|
 			row.each_with_index do |space, space_index|
-				if (row_index + space_index).even?
+				if (row_index + space_index).even? #REV: smart way to setup your pieces
 					@board[row_index][space_index] = Man.new(:red) if row_index < 1
 					@board[row_index][space_index] = Man.new(:black) if row_index > 6
 				end
@@ -40,6 +40,7 @@ class Board
     #@board[coordinates[0]][coordinates[1]]
   #end
 
+  #REV: get rid of puts. Should a board move_piece? or should the player?
   def move_piece(start_pos, end_pos)
     pick_up_piece = get_square(start_pos)
     puts 1

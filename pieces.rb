@@ -1,6 +1,8 @@
 class Man
 	attr_reader :color, :possible_moves, :symbol
 
+	#REV: intersting way to setup your piece/board. Each piece does not know its
+	# own position?
 	def initialize(color)
 		@color = color
 		@possible_moves = []
